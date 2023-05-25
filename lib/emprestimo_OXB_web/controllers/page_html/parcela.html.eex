@@ -1,0 +1,30 @@
+<!-- parcela.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parcelas de Empréstimo</title>
+</head>
+<body>
+  <h1>Parcelas de Empréstimo</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Valor</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for loan <- @loans do %>
+        <tr>
+          <td><%= loan.emprestimo_id %></td>
+          <td><%= loan.valor_parcelas %></td>
+          <td><a href="/personal/parcel_payment/<%= loan.emprestimo_id %>">Pagar Parcela</a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
+</html>

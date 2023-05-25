@@ -20,6 +20,14 @@ defmodule Emprestimo_OXBWeb.Router do
     get "/simulacao", EmprestimoController, :index
     post "/simular", EmprestimoController, :simular
     get "/resultado", ResultadoController, :index
+    get "/users/:user_id/loans", LoanController, :get_user_loans
+    get "/view_loans", PageController, :view_loans
+    get "/personal", PersonalController, :index
+    get "/personal/parcel_payment", PaymentController, :index
+    get "/personal/parcel_payment/:id", PaymentController, :pay_installment
+    post "/pay_installment", PaymentController, :pay_processing
+    get "/personal/renegotiation", PersonalController, :renegotiation
+    get "/personal/request_loan", PersonalController, :request_loan
 
   end
 

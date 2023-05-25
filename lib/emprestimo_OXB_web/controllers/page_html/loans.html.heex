@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Empréstimos</title>
+  </head>
+  <body>
+    <h1>Empréstimos do Usuário</h1>
+    <ul>
+      <%= for loan <- @loans do %>
+        <li>Empréstimo de <%= loan.valor_emprestimo %> para o usuário <%= loan.user_id %></li>
+      <% end %>
+    </ul>
+  </body>
+</html>

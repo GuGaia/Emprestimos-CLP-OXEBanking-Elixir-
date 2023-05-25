@@ -5,7 +5,7 @@ config :emprestimo_OXB, Emprestimo_OXB.Repo,
   username: "postgres",
   password: "gu1610",
   hostname: "localhost",
-  database: "emprestimo",
+  database: "postgres",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

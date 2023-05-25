@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pagamento de Parcela</title>
+  <style>
+    /* Estilos CSS */
+  </style>
+</head>
+<body>
+  <h1>Pagamento de Parcela</h1>
+
+  <div>
+    <p>Detalhes do Empréstimo:</p>
+    <p>ID: <%= @loan.emprestimo_id %></p>
+    <p>Valor Total: <%= @loan.valor_emprestimo %></p>
+    <p>Valor Parcela: <%= @loan.valor_parcelas %></p>
+    <p>Parcelas Restantes: <%= @loan.parcelas_restantes %></p>
+  </div>
+
+  <form action="/pay_installment" method="post">
+    <input type="hidden" name="id" value="<%= @loan.emprestimo_id %>">
+    <label for="payment_amount">Valor do Pagamento:</label>
+    <input type="text" id="payment_amount" name="payment_amount" required>
+    <button type="submit">Realizar Pagamento</button>
+  </form>
+</body>
+</html>

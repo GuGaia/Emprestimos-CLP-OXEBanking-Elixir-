@@ -8,4 +8,10 @@ defmodule Emprestimo_OXBWeb.PageController do
 
   end
 
+  def view_loans(conn, _params) do
+    user_id = 1610  # Substitua pelo ID do usuário que você deseja recuperar os empréstimos
+    loans = Emprestimo_OXB.Accounts.LoanContext.get_user_loans(user_id)
+    render(conn, "loans.html", loans: loans)
+  end
+
 end
